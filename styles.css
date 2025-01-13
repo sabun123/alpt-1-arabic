@@ -1,0 +1,432 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --correct-color: #4CAF50;
+    --incorrect-color: #f44336;
+    --checkbox-bg: #f0f0f0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --checkbox-bg: #2a2a2a;
+    --correct-color: #66BB6A;
+    --incorrect-color: #FF5252;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#themeToggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* Light mode specific styling */
+body:not(.dark-mode) #themeToggle {
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode specific styling */
+body.dark-mode #themeToggle {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kanji-display {
+    margin: 40px 0;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+#currentKanji {
+    font-size: clamp(120px, 20vw, 280px);
+    margin: 20px 0;
+    line-height: 1.2;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.kanji-exit {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.kanji-enter {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.translation {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem 0;
+    color: #666;
+}
+
+.readings-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.reading-option {
+    background-color: var(--checkbox-bg);
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.reading-option:hover {
+    transform: translateY(-2px);
+}
+
+.reading-option:hover span {
+    transform: scale(1.8);
+}
+
+body.dark-mode .reading-option {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+body.dark-mode .reading-option:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode .reading-option.correct,
+.reading-option.correct {
+    background-color: var(--correct-color);
+    color: white;
+    border-color: var(--correct-color);
+}
+
+body.dark-mode .reading-option.incorrect,
+.reading-option.incorrect {
+    background-color: var(--incorrect-color);
+    color: white;
+    border-color: var(--incorrect-color);
+    animation: shake 0.4s ease-in-out;
+}
+
+.reading-option.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.reading-option.disabled:hover {
+    transform: none;
+}
+
+.reading-option.disabled:hover span {
+    transform: none;
+}
+
+#success-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(120px, 20vw, 280px);
+    color: var(--correct-color);
+    opacity: 0;
+    z-index: 2;
+}
+
+#success-indicator.visible {
+    animation: popOut 0.5s ease-out forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.copyright {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    box-sizing: border-box;
+    margin-top: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.linkedin-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.linkedin-link:hover {
+    opacity: 0.7;
+}
+
+.linkedin-icon {
+    fill: var(--text-color);
+    width: 24px;
+    height: 24px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.controls button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.dark-mode .controls button {
+    background: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.reading-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.reading-item::after {
+    content: '🔊';
+    position: absolute;
+    right: -1.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.reading-item:hover::after {
+    opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+    .readings-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .reading-option {
+        font-size: 1.2rem;
+        padding: 15px 25px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add new animations */
+@keyframes popOut {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4); /* Increased scale for more dramatic effect */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Floating announcement styles */
+.announcement {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    padding: 12px 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out, fadeOut 0.3s ease-in 0.7s forwards;
+    font-size: 1.1rem;
+}
+
+.announcement.correct {
+    background-color: var(--correct-color);
+    color: white;
+    border-color: var(--correct-color);
+}
+
+.announcement.incorrect {
+    background-color: var(--incorrect-color);
+    color: white;
+    border-color: var(--incorrect-color);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Accessibility Improvements */
+.reading-option:focus {
+    outline: 3px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+#themeToggle:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    #currentKanji {
+        margin: 20px 0;
+    }
+
+    .readings-container {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .reading-option {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .copyright {
+        padding: 15px 10px;
+    }
+
+    #success-indicator {
+        font-size: clamp(80px, 15vw, 200px); /* Slightly smaller on mobile */
+    }
+}
+
+/* Ensure theme toggle remains visible and usable */
+@media (max-width: 360px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    #themeToggle {
+        padding: 8px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #currentKanji {
+        font-size: 6rem;
+    }
+}
