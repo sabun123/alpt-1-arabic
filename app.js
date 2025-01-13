@@ -78,6 +78,12 @@ class ArabicGame {
     }
 
     async showNextWord() {
+        // Reset all reading option scales
+        const readingOptions = document.querySelectorAll('.reading-option span');
+        readingOptions.forEach(span => {
+            span.style.transform = 'scale(1)';
+        });
+
         const previousWord = this.currentWord;
         this.currentWord = this.getRandomWord();
         this.correctPronunciations = new Set([
