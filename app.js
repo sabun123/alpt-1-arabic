@@ -34,7 +34,13 @@ class ArabicGame {
 
         this.translationToggle.addEventListener('click', () => {
             const translationElement = document.getElementById('translation');
+            const isCurrentlyHidden = translationElement.classList.contains('hidden');
             translationElement.classList.toggle('hidden');
+            
+            // Play the word when showing pronunciations
+            if (isCurrentlyHidden) {
+                this.playWord();
+            }
         });
     }
 
@@ -170,32 +176,32 @@ class ArabicGame {
         });
     }
 
-    getBestJapaneseVoice() {
-        // First, try to find a male Japanese voice
-        const maleJapaneseVoice = this.voices.find(voice => 
-            (voice.lang.includes('ja-JP') || voice.lang.includes('ja')) &&
+    getBestArabicVoice() {
+        // First, try to find a male Arabic voice
+        const maleArabicVoice = window.speechSynthesis.getVoices().find(voice => 
+            (voice.lang.includes('ar') || voice.lang.includes('AR')) &&
             voice.name.toLowerCase().includes('male')
         );
         
-        if (maleJapaneseVoice) return maleJapaneseVoice;
+        if (maleArabicVoice) return maleArabicVoice;
 
-        // Next, try to find a Microsoft Japanese voice (generally higher quality)
-        const microsoftJapaneseVoice = this.voices.find(voice =>
-            (voice.lang.includes('ja-JP') || voice.lang.includes('ja')) &&
+        // Next, try to find a Microsoft Arabic voice
+        const microsoftArabicVoice = window.speechSynthesis.getVoices().find(voice =>
+            (voice.lang.includes('ar') || voice.lang.includes('AR')) &&
             voice.name.includes('Microsoft')
         );
 
-        if (microsoftJapaneseVoice) return microsoftJapaneseVoice;
+        if (microsoftArabicVoice) return microsoftArabicVoice;
 
-        // Finally, fall back to any Japanese voice
-        const anyJapaneseVoice = this.voices.find(voice =>
-            voice.lang.includes('ja-JP') || voice.lang.includes('ja')
+        // Finally, fall back to any Arabic voice
+        const anyArabicVoice = window.speechSynthesis.getVoices().find(voice =>
+            voice.lang.includes('ar') || voice.lang.includes('AR')
         );
 
-        return anyJapaneseVoice;
+        return anyArabicVoice;
     }
 
-    async playReading(reading) {
+    async playWord() {
         if (!window.speechSynthesis) {
             console.error('Speech synthesis not supported');
             return;
@@ -204,16 +210,16 @@ class ArabicGame {
         // Cancel any ongoing speech
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance(reading);
-        utterance.lang = 'ja-JP';
+        const utterance = new SpeechSynthesisUtterance(this.currentWord.word);
+        utterance.lang = 'ar';
         
         // Optimize voice settings for better quality
-        utterance.rate = 1;    // Slightly slower for clarity
-        utterance.pitch = 1.0;   // Slightly deeper voice
-        utterance.volume = 1.0;  // Full volume
+        utterance.rate = 0.8;     // Slower for clarity
+        utterance.pitch = 1.0;    // Natural pitch
+        utterance.volume = 1.0;   // Full volume
 
-        // Get the best available Japanese voice
-        const bestVoice = this.getBestJapaneseVoice();
+        // Get the best available Arabic voice
+        const bestVoice = this.getBestArabicVoice();
         if (bestVoice) {
             utterance.voice = bestVoice;
         }
@@ -276,6 +282,11 @@ class ArabicGame {
 
     handleTranslationSelection(button, translation) {
         if (button.classList.contains('disabled')) return;
+
+        // Play the Arabic word when showing pronunciations
+        if (translation === this.currentWord.en) {
+            this.playWord();
+        }
 
         const showAnnouncement = (message, isCorrect) => {
             const announcement = document.createElement('div');
