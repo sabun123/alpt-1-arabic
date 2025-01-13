@@ -16,7 +16,7 @@ A simple, interactive web application for practicing Arabic vocabulary for ALPT 
 
 ## Live Site
 
-Visit [https://sabun123.github.io/arabic-alpt1/](https://sabun123.github.io/arabic-alpt1/)
+Visit [https://sabun123.github.io/alpt-1-arabic/](https://sabun123.github.io/alpt-1-arabic/)
 
 Go to the above link to access the site and start learning Arabic vocabulary today!
 
