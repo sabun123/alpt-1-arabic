@@ -878,5 +878,357 @@ const arabicData = [
             "colloquial": ["tahaddatha", "tahadatha"]
         },
         "en": "talk, speak"
+    },
+    {
+        "word": "أحب",
+        "pronunciations": {
+            "classical": "'ahibbu",
+            "colloquial": ["'ahibbu", "ohobb"]
+        },
+        "en": "love"
+    },
+    {
+        "word": "أرى",
+        "pronunciations": {
+            "classical": "'ara",
+            "colloquial": ["'ara", "oreh"]
+        },
+        "en": "see"
+    },
+    {
+        "word": "أسمع",
+        "pronunciations": {
+            "classical": "'asma'",
+            "colloquial": ["'asma'", "osma3"]
+        },
+        "en": "hear"
+    },
+    {
+        "word": "أفهم",
+        "pronunciations": {
+            "classical": "'afhamu",
+            "colloquial": ["'afhamu", "ofham"]
+        },
+        "en": "understand"
+    },
+    {
+        "word": "أتعلم",
+        "pronunciations": {
+            "classical": "'ata'allamu",
+            "colloquial": ["'ata'allamu", "ot3allam"]
+        },
+        "en": "learn"
+    },
+    {
+        "word": "أعرف",
+        "pronunciations": {
+            "classical": "'a'rif",
+            "colloquial": ["'a'rif", "oraif"]
+        },
+        "en": "know"
+    },
+    {
+        "word": "أريد",
+        "pronunciations": {
+            "classical": "'uriidu",
+            "colloquial": ["'uriidu", "oreed"]
+        },
+        "en": "want"
+    },
+    {
+        "word": "أستطيع",
+        "pronunciations": {
+            "classical": "'asta'thiitu",
+            "colloquial": ["'asta'thiitu", "astahtee"]
+        },
+        "en": "can, be able to"
+    },
+    {
+        "word": "أساعد",
+        "pronunciations": {
+            "classical": "'asa'idu",
+            "colloquial": ["'asa'idu", "osa3ed"]
+        },
+        "en": "help"
+    },
+    {
+        "word": "أمشي",
+        "pronunciations": {
+            "classical": "'amsii",
+            "colloquial": ["'amsii", "omsy"]
+        },
+        "en": "walk"
+    },
+    {
+        "word": "أنام",
+        "pronunciations": {
+            "classical": "'anaamu",
+            "colloquial": ["'anaamu", "onoom"]
+        },
+        "en": "sleep"
+    },
+    {
+        "word": "أعيش",
+        "pronunciations": {
+            "classical": "'a'ishu",
+            "colloquial": ["'a'ishu", "o'eesh"]
+        },
+        "en": "live"
+    },
+    {
+        "word": "أدرس",
+        "pronunciations": {
+            "classical": "'adrusu",
+            "colloquial": ["'adrusu", "odros"]
+        },
+        "en": "study"
+    },
+    {
+        "word": "أعمل",
+        "pronunciations": {
+            "classical": "'a'malu",
+            "colloquial": ["'a'malu", "o'amal"]
+        },
+        "en": "work"
+    },
+    {
+        "word": "أذهب",
+        "pronunciations": {
+            "classical": "'adhhabu",
+            "colloquial": ["'adhhabu", "odhab"]
+        },
+        "en": "go"
+    },
+    {
+        "word": "أجيء",
+        "pronunciations": {
+            "classical": "'ajii'u",
+            "colloquial": ["'ajii'u", "ojee"]
+        },
+        "en": "come"
+    },
+    {
+        "word": "أجد",
+        "pronunciations": {
+            "classical": "'ajidu",
+            "colloquial": ["'ajidu", "ojed"]
+        },
+        "en": "find"
+    },
+    {
+        "word": "أبيع",
+        "pronunciations": {
+            "classical": "'abii'u",
+            "colloquial": ["'abii'u", "obee"]
+        },
+        "en": "sell"
+    },
+    {
+        "word": "أشتري",
+        "pronunciations": {
+            "classical": "'ashtari",
+            "colloquial": ["'ashtari", "oshtaree"]
+        },
+        "en": "buy"
+    },
+    {
+        "word": "أخبر",
+        "pronunciations": {
+            "classical": "'akhbara",
+            "colloquial": ["'akhbara", "okhber"]
+        },
+        "en": "inform, tell"
+    },
+    {
+        "word": "أفكر",
+        "pronunciations": {
+            "classical": "'ufakkiru",
+            "colloquial": ["'ufakkiru", "ofakkir"]
+        },
+        "en": "think"
+    },
+    {
+        "word": "أقرأ",
+        "pronunciations": {
+            "classical": "'aqra'u",
+            "colloquial": ["'aqra'u", "oqra2"]
+        },
+        "en": "read"
+    },
+    {
+        "word": "أكتب",
+        "pronunciations": {
+            "classical": "'aktubu",
+            "colloquial": ["'aktubu", "oktob"]
+        },
+        "en": "write"
+    },
+    {
+        "word": "أتحدث",
+        "pronunciations": {
+            "classical": "'atahadatha",
+            "colloquial": ["'atahadatha", "ota7adeth"]
+        },
+        "en": "talk, speak"
+    },
+    {
+        "word": "أركض",
+        "pronunciations": {
+            "classical": "'arkud",
+            "colloquial": ["'arkud", "orkud"]
+        },
+        "en": "run"
+    },
+    {
+        "word": "أقف",
+        "pronunciations": {
+            "classical": "'aqif",
+            "colloquial": ["'aqif", "oqif"]
+        },
+        "en": "stand"
+    },
+    {
+        "word": "أجلس",
+        "pronunciations": {
+            "classical": "'ajlisu",
+            "colloquial": ["'ajlisu", "ojles"]
+        },
+        "en": "sit"
+    },
+    {
+        "word": "أدخل",
+        "pronunciations": {
+            "classical": "'adkhalu",
+            "colloquial": ["'adkhalu", "odkhel"]
+        },
+        "en": "enter"
+    },
+    {
+        "word": "أخرج",
+        "pronunciations": {
+            "classical": "'akhruju",
+            "colloquial": ["'akhruju", "okhorog"]
+        },
+        "en": "exit, go out"
+    },
+    {
+        "word": "أفتح",
+        "pronunciations": {
+            "classical": "'afatahu",
+            "colloquial": ["'afatahu", "ofateh"]
+        },
+        "en": "open"
+    },
+    {
+        "word": "أقفل",
+        "pronunciations": {
+            "classical": "'aqfalu",
+            "colloquial": ["'aqfalu", "oqfel"]
+        },
+        "en": "close"
+    },
+    {
+        "word": "أعطي",
+        "pronunciations": {
+            "classical": "'u'ti",
+            "colloquial": ["'u'ti", "ooti"]
+        },
+        "en": "give"
+    },
+    {
+        "word": "آخذ",
+        "pronunciations": {
+            "classical": "'a'khudhu",
+            "colloquial": ["'a'khudhu", "o'khod"]
+        },
+        "en": "take"
+    },
+    {
+        "word": "أضع",
+        "pronunciations": {
+            "classical": "'ada'u",
+            "colloquial": ["'ada'u", "oda2"]
+        },
+        "en": "put"
+    },
+    {
+        "word": "أرتدي",
+        "pronunciations": {
+            "classical": "'artadi",
+            "colloquial": ["'artadi", "ortadee"]
+        },
+        "en": "wear"
+    },
+    {
+        "word": "أتناول",
+        "pronunciations": {
+            "classical": "'attanaawalu",
+            "colloquial": ["'attanaawalu", "ottanawal"]
+        },
+        "en": "eat, have (food)"
+    },
+    {
+        "word": "أشرب",
+        "pronunciations": {
+            "classical": "'ashrubu",
+            "colloquial": ["'ashrubu", "oshrob"]
+        },
+        "en": "drink"
+    },
+    {
+        "word": "ألعب",
+        "pronunciations": {
+            "classical": "'ala'ibu",
+            "colloquial": ["'ala'ibu", "ol3eb"]
+        },
+        "en": "play"
+    },
+    {
+        "word": "أغني",
+        "pronunciations": {
+            "classical": "'ughni",
+            "colloquial": ["'ughni", "oghnee"]
+        },
+        "en": "sing"
+    },
+    {
+        "word": "أرسم",
+        "pronunciations": {
+            "classical": "'arsimu",
+            "colloquial": ["'arsimu", "orsim"]
+        },
+        "en": "draw"
+    },
+    {
+        "word": "أصنع",
+        "pronunciations": {
+            "classical": "'asna'u",
+            "colloquial": ["'asna'u", "osno"]
+        },
+        "en": "make, produce"
+    },
+    {
+        "word": "أطبخ",
+        "pronunciations": {
+            "classical": "'atba'khu",
+            "colloquial": ["'atba'khu", "otbakh"]
+        },
+        "en": "cook"
+    },
+    {
+        "word": "أغسل",
+        "pronunciations": {
+            "classical": "'aghassilu",
+            "colloquial": ["'aghassilu", "oghasel"]
+        },
+        "en": "wash"
+    },
+    {
+        "word": "أنظف",
+        "pronunciations": {
+            "classical": "'anzifu",
+            "colloquial": ["'anzifu", "onzef"]
+        },
+        "en": "clean"
     }
 ];
