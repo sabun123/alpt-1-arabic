@@ -20,8 +20,18 @@
         </div>
         <div class="controls">
             <button id="toggleTranslation" aria-label="Toggle pronunciations">Show Pronunciations</button>
+            <button id="infoButton" class="info-button" aria-label="Show word list">i</button>
         </div>
         <div id="readings" class="readings-container"></div>
+
+        <!-- Word List Popup -->
+        <div id="wordListPopup" class="popup hidden">
+            <div class="popup-content">
+                <button id="closePopup" class="close-button" aria-label="Close word list">&times;</button>
+                <h2>Available Words</h2>
+                <div id="wordList" class="word-list"></div>
+            </div>
+        </div>
     </main>
     <footer class="copyright">
         <p>&copy; <span id="copyright-year">2025</span> Yusuf Ismail bin Shukor</p>

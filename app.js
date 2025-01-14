@@ -10,6 +10,9 @@ class ArabicGame {
         this.successIndicator = document.getElementById('success-indicator');
         this.themeToggle = document.getElementById('themeToggle');
         this.translationToggle = document.getElementById('toggleTranslation');
+        this.infoButton = document.getElementById('infoButton');
+        this.popup = document.getElementById('wordListPopup');
+        this.closePopupButton = document.getElementById('closePopup');
 
         // Footer copyright
         const currentYear = new Date().getFullYear();
@@ -17,6 +20,7 @@ class ArabicGame {
         copyrightYear.textContent = currentYear > 2025 ? `2025-${currentYear}` : '2025';
         
         this.initializeEventListeners();
+        this.initializeWordList();
         this.showNextWord();
 
         // Add ARIA attributes
@@ -41,6 +45,68 @@ class ArabicGame {
             if (isCurrentlyHidden) {
                 this.playWord();
             }
+        });
+
+        // Add popup event listeners
+        this.infoButton.addEventListener('click', () => {
+            this.popup.classList.remove('hidden');
+        });
+
+        this.closePopupButton.addEventListener('click', () => {
+            this.popup.classList.add('hidden');
+        });
+
+        // Close popup when clicking outside
+        this.popup.addEventListener('click', (e) => {
+            if (e.target === this.popup) {
+                this.popup.classList.add('hidden');
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.popup.classList.contains('hidden')) {
+                this.popup.classList.add('hidden');
+            }
+        });
+    }
+
+    initializeWordList() {
+        const wordListContainer = document.getElementById('wordList');
+        const totalWords = this.arabicData.length;
+        
+        // Add word stats
+        const statsDiv = document.createElement('div');
+        statsDiv.className = 'word-stats';
+        statsDiv.textContent = `Total Words: ${totalWords}`;
+        wordListContainer.appendChild(statsDiv);
+        
+        // Add words with numbers
+        this.arabicData.forEach((word, index) => {
+            const wordItem = document.createElement('div');
+            wordItem.className = 'word-item';
+            
+            const numberDiv = document.createElement('div');
+            numberDiv.className = 'word-number';
+            numberDiv.textContent = `${index + 1}.`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'word-content';
+            
+            const arabic = document.createElement('div');
+            arabic.className = 'arabic';
+            arabic.textContent = word.word;
+            
+            const english = document.createElement('div');
+            english.className = 'english';
+            english.textContent = word.en;
+            
+            contentDiv.appendChild(arabic);
+            contentDiv.appendChild(english);
+            
+            wordItem.appendChild(numberDiv);
+            wordItem.appendChild(contentDiv);
+            wordListContainer.appendChild(wordItem);
         });
     }
 

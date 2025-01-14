@@ -272,6 +272,21 @@ body.dark-mode .reading-option.incorrect,
     cursor: pointer;
 }
 
+/* Add this to override the general button styles for the info button specifically */
+.controls .info-button {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px; /* Ensure fixed width */
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-family: serif;
+}
+
 .dark-mode .controls button {
     background: #333;
     color: #fff;
@@ -457,4 +472,104 @@ body.dark-mode .reading-option.incorrect,
     #currentKanji {
         font-size: 6rem;
     }
+}
+
+/* Add these new styles */
+.info-button {
+    transition: all 0.3s ease;
+}
+
+.info-button:hover {
+    transform: scale(1.1);
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.word-stats {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--checkbox-bg);
+    border-radius: 8px;
+}
+
+.word-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    background-color: var(--checkbox-bg);
+}
+
+.word-number {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+    min-width: 30px;
+    text-align: right;
+}
+
+.word-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.word-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.word-item .arabic {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.word-item .english {
+    color: var(--text-color-secondary);
+    font-size: 0.9em;
 }
