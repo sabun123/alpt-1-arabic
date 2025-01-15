@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sabun123.github.io/alpt-1-arabic/sitemap.xml
